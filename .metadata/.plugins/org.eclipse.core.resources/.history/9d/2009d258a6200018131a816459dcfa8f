@@ -1,0 +1,48 @@
+package source;
+
+
+import java.util.Queue;
+
+public class ConsumerThread extends Thread{
+
+	private Queue<Integer> lista;
+	
+	ConsumerThread(Queue<Integer> lista){
+		this.lista = lista;
+	}
+	
+	public synchronized void consuma() throws InterruptedException{
+		
+		while(true){
+			
+
+				
+				while(lista.isEmpty()){
+					wait();
+				}
+				System.out.println("Am consumat un element din lista");
+				lista.remove();
+				notify();
+				Thread.sleep(1000);
+			
+			
+			
+		}
+		
+	}
+	
+	public void run() {
+		
+		try {
+		
+			consuma();
+		
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		
+		}
+		
+	}
+
+}

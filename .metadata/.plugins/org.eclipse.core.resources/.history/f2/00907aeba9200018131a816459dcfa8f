@@ -1,0 +1,17 @@
+package source;
+
+import java.util.Queue;
+
+public class ProducerConsumer {
+
+	Queue <Integer> lista;
+	int MAX_SIZE;
+	
+	ProducerConsumer(Queue<Integer> lista, int MAX_SIZE){
+		
+		this.lista = lista;
+		this.MAX_SIZE = MAX_SIZE;
+	
+	}
+	
+}

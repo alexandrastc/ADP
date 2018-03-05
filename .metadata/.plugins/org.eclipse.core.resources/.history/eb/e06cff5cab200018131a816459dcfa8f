@@ -1,0 +1,105 @@
+package source;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
+
+public class main {
+	
+	public static main Main = null;
+    private static Queue<Integer> q = new LinkedList<Integer>();
+    static Random rand = new Random(System.currentTimeMillis());
+    static private int MAX_SIZE = 10;
+    
+    public static void main(String[] args) {
+    	
+    	Main = new main();
+    
+    }
+    
+    main(){
+        new Thread(producator).start();
+        new Thread(consumator).start();
+    }
+
+    private static synchronized void addToQueue(String name){
+    	int numar = rand.nextInt(100) + 1;
+        q.add(numar);
+        System.out.println("Am adaugat: " + numar + ", threadul: " + name);
+    }
+    
+    private static synchronized void removeFromQueue(String name){
+        int numar = q.remove();
+        System.out.println("Am scos: " + numar + ", threadul: " + name);
+    }
+
+    private static Runnable producator = new Runnable() {
+        
+    	public void run() {
+        	
+        	while(true){
+	
+        		try{
+        			
+        			while(q.size() == MAX_SIZE){
+        				synchronized(Main){
+        					wait();
+        				}
+        			}
+        			
+        			addToQueue("producator");
+        			
+        			Thread.sleep(1000);
+        			
+        			synchronized(Main){
+        				notify();
+        			}
+        			
+        			
+        			
+        		} catch (Exception e){
+        			
+        			e.printStackTrace();
+        			
+        		}
+        	
+        	}
+        }
+    
+    };
+
+    private static Runnable consumator = new Runnable() {
+        
+    	public void run() {
+        	
+        	while(true){
+        		
+        		try{
+        			
+        			while(q.size() == 0){
+        				synchronized(Main){
+        					wait();
+        				}
+        			}
+        			
+        			removeFromQueue("consumator");
+        			
+        			Thread.sleep(1000);
+        			
+        			synchronized(Main){
+        				notify();
+        			}
+        			
+        			
+        			
+        		} catch (Exception e){
+        			
+        			e.printStackTrace();
+        			
+        		}
+        	
+        	}
+       
+       }
+    };
+} 

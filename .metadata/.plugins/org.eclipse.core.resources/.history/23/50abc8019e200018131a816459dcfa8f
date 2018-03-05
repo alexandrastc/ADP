@@ -1,0 +1,20 @@
+package source;
+
+import java.util.ArrayList;
+
+public class ProducerThread implements Runnable {
+
+	private ArrayList<Integer> lista;
+	private int MAX_SIZE; 
+	
+	ProducerThread(ArrayList<Integer> lista, int MAX_SIZE){
+		this.lista = lista;
+		this.MAX_SIZE = MAX_SIZE;
+	}
+	
+	public void run() {
+	
+		
+	}
+
+}

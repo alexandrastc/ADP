@@ -1,0 +1,35 @@
+package source;
+
+
+import java.util.Queue;
+
+public class ConsumerThread implements Runnable{
+
+	private Queue<Integer> lista;
+	
+	ConsumerThread(Queue<Integer> lista){
+		this.lista = lista;
+	}
+	
+	public void consuma() throws InterruptedException{
+		while(lista.isEmpty()){
+			this.wait();
+		}
+		
+	}
+	
+	public void run() {
+		
+		try {
+		
+			consuma();
+		
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		
+		}
+		
+	}
+
+}

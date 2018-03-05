@@ -1,0 +1,18 @@
+package source;
+
+import java.util.ArrayList;
+
+public class ProducerThread implements Runnable {
+
+	private ArrayList<Integer> lista;
+	
+	ProducerThread(ArrayList<Integer> lista){
+		this.lista = lista;
+	}
+	
+	public void run() {
+	
+		
+	}
+
+}

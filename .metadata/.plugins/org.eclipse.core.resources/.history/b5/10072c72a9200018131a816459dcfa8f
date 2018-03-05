@@ -1,0 +1,77 @@
+package source;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
+
+public class main {
+	
+    private static Queue<Integer> q = new LinkedList<Integer>();
+    static Random rand = new Random(System.currentTimeMillis());
+    static private int MAX_SIZE = 10;
+    
+    public static void main(String[] args) {
+        new Thread(producator).start();
+        new Thread(consumator).start();
+    }
+
+    private static synchronized void countMe(String name){
+        q.add(rand.nextInt(100));
+        System.out.println("Am adaugat: " + q.peek() + ", updated by: " + name);
+    }
+    
+    private static synchronized void countMe2(String name){
+        q.remove();
+        System.out.println("Am scos: " + q.size() + ", updated by: " + name);
+    }
+
+    private static Runnable producator = new Runnable() {
+        
+    	public void run() {
+        	
+        	while(true){
+	
+        		try{
+        			
+        			while(q.size() == MAX_SIZE){
+        				wait();
+        			}
+        			
+        			countMe("producator");
+        			
+        			notify();
+        			
+        			Thread.sleep(10000);
+        			
+        		} catch (Exception e){}
+        	
+        	}
+        }
+    
+    };
+
+    private static Runnable consumator = new Runnable() {
+        
+    	public void run() {
+        	
+        	while(true){
+        		
+        		try{
+        			
+        			while(q.size() == 0){
+        				wait();
+        			}
+        			
+        			countMe2("consumator");
+        			
+        			notify();
+        			
+        			Thread.sleep(10000);
+        			
+        		} catch (Exception e){}
+        	
+        	}
+       
+       }
+    };
+} 

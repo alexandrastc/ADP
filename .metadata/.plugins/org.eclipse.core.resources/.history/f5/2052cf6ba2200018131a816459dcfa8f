@@ -1,0 +1,37 @@
+package source;
+
+
+import java.util.Queue;
+
+public class ConsumerThread implements Runnable{
+
+	private Queue<Integer> lista;
+	
+	ConsumerThread(Queue<Integer> lista){
+		this.lista = lista;
+	}
+	
+	public synchronized void consuma() throws InterruptedException{
+		while(lista.isEmpty()){
+			this.wait();
+		}
+		
+	}
+	
+	public void run() {
+		
+		while(true){
+			try {
+				consuma();
+				lista.remove();
+				System.out.println("Am sters primul element din coada");
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+	}
+
+}

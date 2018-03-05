@@ -1,0 +1,12 @@
+package source;
+
+import java.util.Queue;
+
+public class ProducerConsumer {
+
+	Queue <Integer> lista;
+	ProducerConsumer(Queue<Integer> lista){
+		this.lista = lista;
+	}
+	
+}

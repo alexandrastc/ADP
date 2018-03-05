@@ -1,0 +1,16 @@
+package source;
+
+public class ConsumerThread implements Runnable{
+
+	private ArrayList<Integer> lista;
+	
+	ConsumerThread(ArrayList<Integer> lista){
+		this.lista = lista;
+	}
+	
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

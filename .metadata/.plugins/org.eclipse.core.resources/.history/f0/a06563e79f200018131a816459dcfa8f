@@ -1,0 +1,41 @@
+package source;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class ProducerThread implements Runnable {
+
+	private Queue<Integer> lista;
+	private int MAX_SIZE; 
+	Random rand = new Random(System.currentTimeMillis());
+	
+	ProducerThread(Queue<Integer> lista, int MAX_SIZE){
+		this.lista = lista;
+		this.MAX_SIZE = MAX_SIZE;
+	}
+	
+	public synchronized void produce(){
+		
+		try{
+			
+			while(lista.size() != MAX_SIZE){
+				lista.add(rand.nextInt(100));
+			}
+			
+		} finally {
+			
+			this.notify();
+
+		}
+	
+	}
+	
+	public void run() {
+	
+		while(true){
+			produce();
+		}
+		
+	}
+
+}
