@@ -1,0 +1,28 @@
+package source;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Producator implements Runnable {
+	
+	private static Queue<Integer> q;
+	
+	Producator(private static Queue<Integer> q){
+		this.q = q;
+	}
+
+	private static synchronized void addToQueue(String name){
+	    	
+		int numar = rand.nextInt(100) + 1;
+	    q.add(numar);
+	    System.out.println("Am adaugat: " + numar + ", threadul: " + name);
+	    
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

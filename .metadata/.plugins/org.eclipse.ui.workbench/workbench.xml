@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="13" version="2.0">
+<workbench progressCount="20" version="2.0">
 <workbenchAdvisor/>
 <window height="772" maximized="true" width="1026" x="350" y="41">
 <fastViewData fastViewLocation="1024"/>
@@ -35,7 +35,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="main.java" partName="main.java" path="/home/alexsk/Documents/ADP/LAB 1 - Producer + Consumer Mutex/src/source/main.java" title="main.java" tooltip="LAB 1 - Producer + Consumer Mutex/src/source/main.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/LAB 1 - Producer + Consumer Mutex/src/source/main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="517" selectionTopPixel="1349"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="432" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -89,9 +89,9 @@
 <perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
 <perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
 <perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.RunToLine"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
-<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.ui.navigator.ProjectExplorer"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.TaskList"/>
@@ -147,31 +147,27 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LAB 1 - Producer + Consumer Mutex/src/source/main.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LAB 1 - Producer + Consumer Mutex/src/source/ProducerThread.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/LAB 1 - Producer + Consumer Mutex/src/source/ProducerConsumer.java"/>
 </editors>
-<item historyLabel="ProducerThread.java" index="1">
-<position info="not_deleted" x="162" y="0"/>
-</item>
 <item historyLabel="main.java" index="0">
 <position/>
 </item>
-<item historyLabel="ProducerConsumer.java" index="2">
+<item historyLabel="ProducerConsumer.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.java" index="0">
 <position/>
 </item>
-<item historyLabel="ProducerConsumer.java" index="2">
+<item historyLabel="ProducerConsumer.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="ProducerConsumer.java" index="2">
+<item historyLabel="ProducerConsumer.java" index="1">
 <position info="not_deleted" x="228" y="0"/>
 </item>
-<item historyLabel="ProducerConsumer.java" index="2">
+<item historyLabel="ProducerConsumer.java" index="1">
 <position info="not_deleted" x="223" y="0"/>
 </item>
-<item historyLabel="ProducerConsumer.java" index="2">
+<item historyLabel="ProducerConsumer.java" index="1">
 <position info="not_deleted" x="228" y="0"/>
 </item>
 <item historyLabel="main.java" index="0">
@@ -297,8 +293,11 @@
 <item historyLabel="main.java" index="0">
 <position info="not_deleted" x="403" y="0"/>
 </item>
-<item active="true" historyLabel="main.java" index="0">
+<item historyLabel="main.java" index="0">
 <position info="not_deleted" x="347" y="19"/>
+</item>
+<item active="true" historyLabel="main.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -306,10 +305,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topLeft"/>
-<trimItem IMemento.internal.id="bottomLeft"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -317,7 +312,6 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottomRight"/>
 </trimArea>
 </trimLayout>
 </window>
