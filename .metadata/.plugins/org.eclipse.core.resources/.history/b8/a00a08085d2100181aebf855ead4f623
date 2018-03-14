@@ -22,8 +22,8 @@ public class main {
     
     main(){
     	
-    	Producator producator = new Producator(q, this, MAX_SIZE);
-    	Consumator consumator = new Consumator(q, this);
+    	Producator producator = new Producator(q,this,MAX_SIZE);
+    	Consumator consumator = new Consumator(q,this);
         new Thread(producator).start();
         new Thread(consumator).start();
     

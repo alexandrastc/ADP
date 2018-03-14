@@ -31,7 +31,7 @@ public class Consumator implements Runnable{
     			
     			synchronized(q){
     				
-        			while(q.size() == 0){
+        			if(q.size() == 0){
         			
         				synchronized(ProducatorConsumator){
         					main.ProducatorConsumator.wait();
